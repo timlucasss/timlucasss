@@ -17,3 +17,15 @@ You can also learn more at my promotional website: [🌐 rtkolabs.com](https://r
 
 💡 On this GitHub, I mostly share **snippets, concepts, and demos** of my work rather than full codebases.  
 If you’d like to know more about my projects or code, feel free to reach out!
+
+### 🎨 3D Graphics with Google Filament
+In Kompii, I use **Google Filament** to render smooth and performant 3D avatars.  
+This allows users to customize their avatar in real-time with:
+
+- Multiple hairstyles, clothes, and accessories  
+- Dynamic lighting and shadows  
+- High-quality textures optimized for mobile  
+
+Here’s a preview of the avatar system in action:  
+![Avatar Demo](assets/CharacterCustomization.mp4)  
+
