@@ -27,5 +27,6 @@ This allows users to customize their avatar in real-time with:
 - High-quality textures optimized for mobile  
 
 Here’s a preview of the avatar system in action:  
-![Avatar Demo](assets/CharacterCustomization.mp4)  
-
+<video autoplay loop muted playsinline>
+  <source src="assets/CharacterCustomization.mp4" type="video/mp4">
+</video>
