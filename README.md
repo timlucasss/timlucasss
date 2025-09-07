@@ -148,10 +148,10 @@ while (dailyselectedIndices.size < 3)
 
 #### 4️⃣ Loading Leaderboard from Query
 
+<img src="assets/3.png" width="290" align="right">
+
 Fetches the user’s friends list IDs from SharedPreferences, updates each friend’s latest profile data from Firebase, and then sorts them by fitness level to display in the leaderboard.
 
-
-<img src="assets/3.png" width="290" align="right">
 
 ```
 fun loadLeaderboard() {
