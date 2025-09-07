@@ -1,7 +1,7 @@
 ## Hi there 👋
 
-I’m Tim, a **mobile app developer** passionate about creating engaging and impactful applications.  
-Currently, I’m focusing on building apps that combine **fitness, fun, and social features**.
+I'm Tim, a **mobile app developer** passionate about creating engaging and impactful applications.  
+Currently, I'm focusing on building apps that combine **fitness, fun, and social features**.
 
 ### 🚀 Featured Project
 **Kompii** – a social fitness app that makes working out more fun and competitive.  
@@ -15,7 +15,7 @@ You can also learn more at my promotional website: [🌐 rtkolabs.com](https://r
 ---
 
 💡 On this GitHub, I mostly share **snippets, concepts, and demos** of my work rather than full codebases.  
-If you’d like to know more about my projects or code, feel free to reach out!
+If you'd like to know more about my projects or code, feel free to reach out!
 
 ### 🎨 3D Graphics with Google Filament
 In Kompii, I use **Google Filament** to render smooth and performant 3D avatars.  
@@ -25,14 +25,14 @@ This allows users to customize their avatar in real-time with:
 - Dynamic lighting and shadows  
 - High-quality textures optimized for mobile  
 
-Here’s a preview of the avatar system in action:  
+Here's a preview of the avatar system in action:  
 <img src="assets/AvatarGIF.gif" width="320">
 
 ---
 
 ### 🖥️ Avatar3D Snippets
 
-Here are a few **highlighted code snippets** from Kompii’s avatar system:
+Here are a few **highlighted code snippets** from Kompii's avatar system:
 
 #### 1 Dynamic Hair Selection
 Show or hide specific hairstyles in the avatar:
@@ -56,14 +56,12 @@ fun showOnlyHairstyleByName(targetName: String, modelViewer: ModelViewer) {
         }
     }
 }
-
 ```
+
 #### 2 Material Coloring
 This function applies a color overlay to an avatar's material at runtime. It blends a base hex color with an existing texture, allowing dynamic customization of avatar appearances such as hair, clothes, or accessories.
 
 ```kotlin
-
-
 private fun applyColorToMaterial(
     material: MaterialInstance,
     hexColor: String,
@@ -100,15 +98,17 @@ private fun applyColorToMaterial(
     ))
     material.setParameter("baseColorMap", texture, TextureSampler())
 }
-
-
 ```
+
 #### 3 Generating Challenges
+
+<div align="center">
+
 Generates a pool of daily fitness challenges, scales targets by user difficulty, and selects three unique challenges randomly each day:
 
-<img src="assets/9.png" width="320">
+<img src="assets/9.png" width="320" align="right">
 
-```
+```kotlin
 val dailychallengePool = mutableListOf<Challenge>()
 val dailyTarget = (20 * (1 + profiledifficultyD!! / 10.0)).toInt()
 
@@ -128,10 +128,6 @@ val dailyselectedIndices = mutableSetOf(dailyRNG1!! % dailychallengePool.size,
 var add = 1
 while (dailyselectedIndices.size < 3)
     dailyselectedIndices.add((dailyselectedIndices.elementAt(0) + add++) % dailychallengePool.size)
+```
 
-
-
-
-
-
-
+</div>
