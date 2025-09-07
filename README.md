@@ -7,17 +7,17 @@ Currently, I'm focusing on building apps that combine **fitness, fun, and social
 **Kompii** – a social fitness app that makes working out more fun and competitive.  
 Available now on both platforms:
 
-- [🤖 Get it on Google Play](https://play.google.com/store/apps/details?id=com.rtkolabs.levelup&hl=en_GB)  
-- [📱 Download on the App Store](https://apps.apple.com/us/app/kompii/id6475413819)  
+- [Get it on Google Play](https://play.google.com/store/apps/details?id=com.rtkolabs.levelup&hl=en_GB)  
+- [Download on the App Store](https://apps.apple.com/us/app/kompii/id6475413819)  
 
-You can also learn more at my promotional website: [🌐 rtkolabs.com](https://rtkolabs.com)
+You can also learn more at my promotional website: [rtkolabs.com](https://rtkolabs.com)
 
 ---
 
 💡 On this GitHub, I mostly share **snippets, concepts, and demos** of my work rather than full codebases.  
 If you'd like to know more about my projects or code, feel free to reach out!
 
-### 🎨 3D Graphics with Google Filament
+### 3D Graphics with Google Filament
 In Kompii, I use **Google Filament** to render smooth and performant 3D avatars.  
 This allows users to customize their avatar in real-time with:
 
@@ -34,7 +34,7 @@ Here's a preview of the avatar system in action:
 
 Here are a few **highlighted code snippets** from Kompii's avatar system:
 
-#### 1️⃣ Dynamic Hair Selection
+#### 1 Dynamic Hair Selection
 Show or hide specific hairstyles in the avatar:
 
 ```kotlin
@@ -58,7 +58,7 @@ fun showOnlyHairstyleByName(targetName: String, modelViewer: ModelViewer) {
 }
 ```
 
-#### 2️⃣ Material Coloring
+#### 2 Material Coloring
 This function applies a color overlay to an avatar's material at runtime. It blends a base hex color with an existing texture, allowing dynamic customization of avatar appearances such as hair, clothes, or accessories.
 
 ```kotlin
@@ -102,9 +102,9 @@ private fun applyColorToMaterial(
 
 
 
-### 🏆 Fitness & Social Features Features
+### Fitness & Social Features Features
 
-#### 3️⃣ Generating Challenges
+#### 3 Generating Challenges
 
 <img src="assets/9.png" width="290" align="right">
 
@@ -146,7 +146,7 @@ while (dailyselectedIndices.size < 3)
 
 
 
-#### 4️⃣ Loading Leaderboard from Query
+#### 4 Loading Leaderboard from Query
 
 <img src="assets/3.png" width="290" align="right">
 
