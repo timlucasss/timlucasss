@@ -188,8 +188,4 @@ fun loadLeaderboard() {
         override fun onCancelled(error: DatabaseError) {}
     })
 }
-
-
-
-
-
+```
