@@ -34,7 +34,7 @@ Here’s a preview of the avatar system in action:
 
 Here are a few **highlighted code snippets** from Kompii’s avatar system:
 
-#### 1️⃣ Dynamic Hair Selection
+#### 1 Dynamic Hair Selection
 Show or hide specific hairstyles in the avatar:
 
 ```kotlin
@@ -58,7 +58,7 @@ fun showOnlyHairstyleByName(targetName: String, modelViewer: ModelViewer) {
 }
 
 ```
-#### 1️⃣ Material Coloring
+#### 2 Material Coloring
 This function applies a color overlay to an avatar's material at runtime. It blends a base hex color with an existing texture, allowing dynamic customization of avatar appearances such as hair, clothes, or accessories.
 
 ```kotlin
@@ -100,3 +100,38 @@ private fun applyColorToMaterial(
     ))
     material.setParameter("baseColorMap", texture, TextureSampler())
 }
+
+
+```
+#### 3 Generating Challenges
+Generates a pool of daily fitness challenges, scales targets by user difficulty, and selects three unique challenges randomly each day:
+
+<img src="assets/9.png" width="320">
+
+```
+val dailychallengePool = mutableListOf<Challenge>()
+val dailyTarget = (20 * (1 + profiledifficultyD!! / 10.0)).toInt()
+
+dailychallengePool.add(
+    Challenge(
+        title = "Today's Activity Goal",
+        text = "Complete $dailyTarget min of fitness today.",
+        progress = "Time today: $dailyallFitnessCounter min",
+        isCompleted = { dailyallFitnessCounter >= dailyTarget }
+    )
+)
+
+val dailyselectedIndices = mutableSetOf(dailyRNG1!! % dailychallengePool.size,
+                                        dailyRNG2!! % dailychallengePool.size,
+                                        dailyRNG3!! % dailychallengePool.size)
+// Ensure 3 unique indices
+var add = 1
+while (dailyselectedIndices.size < 3)
+    dailyselectedIndices.add((dailyselectedIndices.elementAt(0) + add++) % dailychallengePool.size)
+
+
+
+
+
+
+
