@@ -27,4 +27,4 @@ This allows users to customize their avatar in real-time with:
 - High-quality textures optimized for mobile  
 
 Here’s a preview of the avatar system in action:  
-![Avatar Demo](assets/AvatarGIF.gif)
+<img src="assets/AvatarGIF.gif" width="320">
