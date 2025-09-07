@@ -1,16 +1,16 @@
 ## Hi there 👋
 
-<!--
-**timlucasss/timlucasss** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I’m Tim, a **mobile app developer** passionate about creating engaging and impactful applications.  
+Currently, I’m focusing on building apps that combine **fitness, fun, and social features**.
 
-Here are some ideas to get you started:
+### 🚀 Featured Project
+**Kompii** – a social fitness app that makes working out more fun and competitive.  
+Available now on both platforms:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- [📱 Download on the App Store](https://apps.apple.com/)  
+- [🤖 Get it on Google Play](https://play.google.com/)
+
+---
+
+💡 On this GitHub, I mostly share **snippets, concepts, and demos** of my work rather than full codebases.  
+If you’d like to know more about my projects or code, feel free to reach out!
