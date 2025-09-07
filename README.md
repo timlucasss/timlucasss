@@ -30,11 +30,11 @@ Here's a preview of the avatar system in action:
 
 ---
 
-### 🖥️ Avatar3D Snippets
+### Avatar3D Snippets
 
 Here are a few **highlighted code snippets** from Kompii's avatar system:
 
-#### 1 Dynamic Hair Selection
+#### 1️⃣ Dynamic Hair Selection
 Show or hide specific hairstyles in the avatar:
 
 ```kotlin
@@ -58,7 +58,7 @@ fun showOnlyHairstyleByName(targetName: String, modelViewer: ModelViewer) {
 }
 ```
 
-#### 2 Material Coloring
+#### 2️⃣ Material Coloring
 This function applies a color overlay to an avatar's material at runtime. It blends a base hex color with an existing texture, allowing dynamic customization of avatar appearances such as hair, clothes, or accessories.
 
 ```kotlin
@@ -100,7 +100,7 @@ private fun applyColorToMaterial(
 }
 ```
 
-#### 3 Generating Challenges
+#### 3️⃣ Generating Challenges
 
 <img src="assets/9.png" width="320" align="right">
 
