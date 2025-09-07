@@ -139,3 +139,54 @@ var add = 1
 while (dailyselectedIndices.size < 3)
     dailyselectedIndices.add((dailyselectedIndices.elementAt(0) + add++) % dailychallengePool.size)
 ```
+
+#### 3️⃣ Loading Leaderboard from Query
+<img src="assets/3.png" width="320" align="right">
+
+```
+
+fun loadLeaderboard() {
+    val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+    leaderboardRV.layoutManager = LinearLayoutManager(context)
+
+    val friendsQuery = mFriendsDatabase.child(user.uid)
+        .orderByChild("/status").equalTo("1")
+
+    friendsData = mutableListOf()
+
+    friendsQuery.addListenerForSingleValueEvent(object : ValueEventListener {
+        override fun onDataChange(snapshot: DataSnapshot) {
+            val remaining = snapshot.childrenCount.toInt()
+            if (remaining == 0) return
+
+            snapshot.children.forEach { child ->
+                val friendId = child.key ?: return@forEach
+                FirebaseDatabase.getInstance().getReference("Users").child(friendId)
+                    .addListenerForSingleValueEvent(object : ValueEventListener {
+                        override fun onDataChange(profileSnap: DataSnapshot) {
+                            profileSnap.getValue<UserData>()?.let { profile ->
+                                friendsData.add(Friend.fromUserData(profile))
+                            }
+
+                            // When all friends are loaded → sort + update UI
+                            if (friendsData.size == remaining) {
+                                val sortedFriends = friendsData.sortedByDescending { it.fitness }
+                                leaderboardRV.adapter = LeaderboardAdapter(sortedFriends)
+
+                                sharedPref.edit()
+                                    .putString("${user.uid}_sortedList", Gson().toJson(sortedFriends))
+                                    .apply()
+                            }
+                        }
+                        override fun onCancelled(error: DatabaseError) {}
+                    })
+            }
+        }
+        override fun onCancelled(error: DatabaseError) {}
+    })
+}
+
+
+
+
+
