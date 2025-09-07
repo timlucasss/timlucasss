@@ -26,7 +26,7 @@ This allows users to customize their avatar in real-time with:
 - High-quality textures optimized for mobile  
 
 Here's a preview of the avatar system in action:  
-<img src="assets/AvatarGIF.gif" width="320">
+<img src="assets/AvatarGIF.gif" width="250">
 
 ---
 
@@ -106,7 +106,7 @@ private fun applyColorToMaterial(
 
 #### 3️⃣ Generating Challenges
 
-<img src="assets/9.png" width="320" align="right">
+<img src="assets/9.png" width="250" align="right">
 
 Generates a pool of daily fitness challenges, scales targets by user difficulty, and selects three unique challenges randomly each day:
 
@@ -144,12 +144,14 @@ while (dailyselectedIndices.size < 3)
     dailyselectedIndices.add((dailyselectedIndices.elementAt(0) + add++) % dailychallengePool.size)
 ```
 
+
+
 #### 4️⃣ Loading Leaderboard from Query
 
 Fetches the user’s friends list IDs from SharedPreferences, updates each friend’s latest profile data from Firebase, and then sorts them by fitness level to display in the leaderboard.
 
 
-<img src="assets/3.png" width="320" align="right">
+<img src="assets/3.png" width="250" align="right">
 
 ```
 fun loadLeaderboard() {
