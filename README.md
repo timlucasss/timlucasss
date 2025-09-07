@@ -99,6 +99,9 @@ private fun applyColorToMaterial(
     material.setParameter("baseColorMap", texture, TextureSampler())
 }
 ```
+
+
+
 ### 🏆 Fitness & Social Features Features
 
 #### 3️⃣ Generating Challenges
