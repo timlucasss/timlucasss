@@ -102,11 +102,9 @@ private fun applyColorToMaterial(
 
 #### 3 Generating Challenges
 
-<div align="center">
+<img src="assets/9.png" width="320" align="right">
 
 Generates a pool of daily fitness challenges, scales targets by user difficulty, and selects three unique challenges randomly each day:
-
-<img src="assets/9.png" width="320" align="right">
 
 ```kotlin
 val dailychallengePool = mutableListOf<Challenge>()
@@ -129,5 +127,3 @@ var add = 1
 while (dailyselectedIndices.size < 3)
     dailyselectedIndices.add((dailyselectedIndices.elementAt(0) + add++) % dailychallengePool.size)
 ```
-
-</div>
