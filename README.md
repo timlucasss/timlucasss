@@ -119,6 +119,18 @@ dailychallengePool.add(
     )
 )
 
+if (footballEnable) {
+    dailychallengePool.add(
+        Challenge(
+            title = "Football Time",
+            text = "Play football for $dailyFootballendval minutes.",
+            imageName = "soccerball_inverse",  // your drawable image name here
+            progress = "Time today: $profiledailyFootballCounter min",
+            isCompleted = { profiledailyFootballCounter!! >= dailyFootballendval }
+        )
+    )
+}
+
 val dailyselectedIndices = mutableSetOf(dailyRNG1!! % dailychallengePool.size,
                                         dailyRNG2!! % dailychallengePool.size,
                                         dailyRNG3!! % dailychallengePool.size)
