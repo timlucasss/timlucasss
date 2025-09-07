@@ -57,6 +57,46 @@ fun showOnlyHairstyleByName(targetName: String, modelViewer: ModelViewer) {
     }
 }
 
+```
+#### 1️⃣ Material Coloring
+This function applies a color overlay to an avatar's material at runtime. It blends a base hex color with an existing texture, allowing dynamic customization of avatar appearances such as hair, clothes, or accessories.
 
-#### 1️⃣ Dynamic Hair Selection
-Show or hide specific hairstyles in the avatar:
+```kotlin
+
+
+private fun applyColorToMaterial(
+    material: MaterialInstance,
+    hexColor: String,
+    textureResourceId: Int,
+    blendPercentage: Float,
+    overlayMode: PorterDuff.Mode
+) {
+    val baseColorInt = Color.parseColor(hexColor)
+    val adjustedAlpha = (Color.alpha(baseColorInt) * blendPercentage).toInt()
+    val blendedColor = baseColorInt and 0x00FFFFFF or (adjustedAlpha shl 24)
+
+    val originalBitmap = BitmapFactory.decodeResource(context.resources, textureResourceId)
+    val resizedBitmap = resizeBitmap(originalBitmap, 256, 256)
+
+    val modifiedBitmap = resizedBitmap.copy(Bitmap.Config.ARGB_8888, true)
+    Canvas(modifiedBitmap).drawBitmap(modifiedBitmap, 0f, 0f, Paint().apply {
+        colorFilter = PorterDuffColorFilter(blendedColor, overlayMode)
+    })
+
+    val byteBuffer = ByteBuffer.allocateDirect(modifiedBitmap.width * modifiedBitmap.height * 4)
+    modifiedBitmap.copyPixelsToBuffer(byteBuffer)
+    byteBuffer.rewind()
+
+    val texture = Texture.Builder()
+        .width(modifiedBitmap.width)
+        .height(modifiedBitmap.height)
+        .levels(1)
+        .sampler(Texture.Sampler.SAMPLER_2D)
+        .format(Texture.InternalFormat.SRGB8_A8)
+        .build(modelViewer.engine)
+
+    texture.setImage(modelViewer.engine, 0, Texture.PixelBufferDescriptor(
+        byteBuffer, Texture.Format.RGBA, Texture.Type.UBYTE, 1
+    ))
+    material.setParameter("baseColorMap", texture, TextureSampler())
+}
