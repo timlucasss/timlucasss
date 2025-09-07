@@ -141,10 +141,13 @@ while (dailyselectedIndices.size < 3)
 ```
 
 #### 3️⃣ Loading Leaderboard from Query
+
+Fetches the user’s friends list IDs from SharedPreferences, updates each friend’s latest profile data from Firebase, and then sorts them by fitness level to display in the leaderboard.
+
+
 <img src="assets/3.png" width="320" align="right">
 
 ```
-
 fun loadLeaderboard() {
     val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
     leaderboardRV.layoutManager = LinearLayoutManager(context)
