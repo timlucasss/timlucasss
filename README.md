@@ -56,3 +56,7 @@ fun showOnlyHairstyleByName(targetName: String, modelViewer: ModelViewer) {
         }
     }
 }
+
+
+#### 1️⃣ Dynamic Hair Selection
+Show or hide specific hairstyles in the avatar:
