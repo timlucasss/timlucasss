@@ -20,7 +20,7 @@ Learn more at [rtkolabs.com](https://rtkolabs.com).
 # About This Repository
 
 This repository does not contain the full Kompii codebase (the project is private).  
-Instead, it highlights selected code snippets and technical concepts to demonstrate my approach and skills.  
+Instead, it highlights selected code snippets and technical concepts to demonstrate my approach.  
 
 ---
 
