@@ -119,37 +119,41 @@ private fun applyColorToMaterial(
 Generates a pool of daily fitness challenges, scales targets by user difficulty, and selects three unique challenges randomly each day:
 
 ```kotlin
-val dailychallengePool = mutableListOf<Challenge>()
-val dailyTarget = (20 * (1 + profiledifficultyD!! / 10.0)).toInt()
+val weeklyChallengePool = mutableListOf<Challenge>()
+val weeklyTarget = (20 * 7 * (1 + profiledifficultyD!! / 10.0)).toInt() // 7 days
 
-dailychallengePool.add(
+weeklyChallengePool.add(
     Challenge(
-        title = "Today's Activity Goal",
-        text = "Complete $dailyTarget min of fitness today.",
-        progress = "Time today: $dailyallFitnessCounter min",
-        isCompleted = { dailyallFitnessCounter >= dailyTarget }
+        title = "This Week's Activity Goal",
+        text = "Complete $weeklyTarget min of fitness this week.",
+        progress = "Time this week: $weeklyAllFitnessCounter min",
+        isCompleted = { weeklyAllFitnessCounter >= weeklyTarget }
     )
 )
 
 if (footballEnable) {
-    dailychallengePool.add(
+    weeklyChallengePool.add(
         Challenge(
             title = "Football Time",
-            text = "Play football for $dailyFootballendval minutes.",
-            imageName = "soccerball_inverse",  // your drawable image name here
-            progress = "Time today: $profiledailyFootballCounter min",
-            isCompleted = { profiledailyFootballCounter!! >= dailyFootballendval }
+            text = "Play football for $weeklyFootballEndVal minutes this week.",
+            imageName = "soccerball_inverse",
+            progress = "Time this week: $profileWeeklyFootballCounter min",
+            isCompleted = { profileWeeklyFootballCounter!! >= weeklyFootballEndVal }
         )
     )
 }
 
-val dailyselectedIndices = mutableSetOf(dailyRNG1!! % dailychallengePool.size,
-                                        dailyRNG2!! % dailychallengePool.size,
-                                        dailyRNG3!! % dailychallengePool.size)
+val weeklySelectedIndices = mutableSetOf(
+    weeklyRNG1!! % weeklyChallengePool.size,
+    weeklyRNG2!! % weeklyChallengePool.size,
+    weeklyRNG3!! % weeklyChallengePool.size
+)
+
 // Ensure 3 unique indices
 var add = 1
-while (dailyselectedIndices.size < 3)
-    dailyselectedIndices.add((dailyselectedIndices.elementAt(0) + add++) % dailychallengePool.size)
+while (weeklySelectedIndices.size < 3)
+    weeklySelectedIndices.add((weeklySelectedIndices.elementAt(0) + add++) % weeklyChallengePool.size)
+
 ```
 
 
