@@ -208,7 +208,7 @@ fun loadLeaderboard() {
 }
 ```
 
-# Use of MVVM
+# Use of MVVM in iOS (SwiftUI)
 
 This project follows the **MVVM (Model–View–ViewModel)** pattern to keep code modular and maintainable.  
 - **Model** represents the raw data (e.g., daily/weekly fitness minutes).  
@@ -237,6 +237,8 @@ class BarChartViewModel: ObservableObject {
     }
 }
 ```
+
+
 - **View**
 ```swift
 struct BarChartCV: View {
