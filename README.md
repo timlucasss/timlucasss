@@ -207,3 +207,51 @@ fun loadLeaderboard() {
     })
 }
 ```
+
+# Use of MVVM
+
+This project follows the **MVVM (Model–View–ViewModel)** pattern to keep code modular and maintainable.  
+- **Model** represents the raw data (e.g., daily/weekly fitness minutes).  
+- **ViewModel** transforms that data into a format the view can consume.  
+- **View** is purely declarative and reacts to changes from the ViewModel.  
+
+### Example: Bar Chart used to display Daily Total Activity Time
+
+- **Model**
+```swift
+struct BarGraphData: Identifiable {
+    let id = UUID()
+    let day: String
+    let minutes: Int
+}
+```
+- **ViewModel**
+```swift
+class BarChartViewModel: ObservableObject {
+    @Published var data: [BarGraphData] = []
+
+    init(dailyMinutes: [Int], labels: [String]) {
+        data = dailyMinutes.enumerated().map { index, minute in
+            BarGraphData(day: labels[index], minutes: minute)
+        }
+    }
+}
+```
+- **View**
+```swift
+struct BarChartCV: View {
+    @StateObject private var viewModel: BarChartViewModel
+
+    init(dailyMinutes: [Int]) {
+        let labels = generateLastSevenDaysLabels()
+        _viewModel = StateObject(wrappedValue: BarChartViewModel(dailyMinutes: dailyMinutes, labels: labels))
+    }
+
+    var body: some View {
+        Chart(viewModel.data) { item in
+            BarMark(x: .value("Day", item.day),
+                    y: .value("Minutes", item.minutes))
+        }
+    }
+}
+```
