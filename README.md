@@ -116,7 +116,7 @@ private fun applyColorToMaterial(
 
 <img src="assets/9.png" width="290" align="right">
 
-Generates a pool of daily fitness challenges, scales targets by user difficulty, and selects three unique challenges randomly each day:
+Generates a pool of weekly fitness challenges, scales targets by user difficulty, and selects three unique challenges randomly each day:
 
 ```kotlin
 val weeklyChallengePool = mutableListOf<Challenge>()
