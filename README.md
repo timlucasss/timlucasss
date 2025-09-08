@@ -237,7 +237,7 @@ class BarChartViewModel: ObservableObject {
     }
 }
 ```
-
+<img src="assets/image0(6).jpeg" width="290" align="right">
 
 - **View**
 ```swift
