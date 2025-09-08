@@ -42,7 +42,7 @@ Preview of the avatar system in action:
 
 Here are a few **highlighted code snippets** from Kompii's avatar system:
 
-#### 1 Dynamic Hair Selection
+#### 1. Dynamic Hair Selection
 Show or hide specific hairstyles in the avatar:
 
 ```kotlin
@@ -66,7 +66,7 @@ fun showOnlyHairstyleByName(targetName: String, modelViewer: ModelViewer) {
 }
 ```
 
-#### 2 Material Coloring
+#### 2. Material Coloring
 This function applies a color overlay to an avatar's material at runtime. It blends a base hex color with an existing texture, allowing dynamic customization of avatar appearances such as hair, clothes, or accessories.
 
 ```kotlin
@@ -112,7 +112,7 @@ private fun applyColorToMaterial(
 
 ### Fitness & Social Features Features
 
-#### 3 Generating Challenges
+#### 3. Generating Challenges
 
 <img src="assets/9.png" width="290" align="right">
 
@@ -154,7 +154,7 @@ while (dailyselectedIndices.size < 3)
 
 
 
-#### 4 Loading Leaderboard from Query
+#### 4. Loading Leaderboard from Query
 
 <img src="assets/3.png" width="290" align="right">
 
