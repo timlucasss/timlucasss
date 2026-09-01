@@ -11,6 +11,12 @@ I focus on building apps that combine fitness, fun, and social features.
 
 **CourtElo** is a dynamic ranking and matchmaking platform designed for competitive sports players to track skill levels using an Elo-based rating system.
 
+<p align="center">
+  <img src="assets/courtelo1.png" width="30%" alt="CourtElo Screenshot 1" />
+  <img src="assets/courtelo2.png" width="30%" alt="CourtElo Screenshot 2" />
+  <img src="assets/courtelo3.png" width="30%" alt="CourtElo Screenshot 3" />
+</p>
+
 - [Download on the App Store](https://apps.apple.com/gb/app/courtelo/id6788834734)
 - *Google Play (Internal Testing)*
 
