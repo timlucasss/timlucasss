@@ -5,7 +5,18 @@ I focus on building apps that combine fitness, fun, and social features.
 
 ---
 
-# Featured Project: Kompii
+# Featured Projects
+
+### CourtElo
+
+**CourtElo** is a dynamic ranking and matchmaking platform designed for competitive sports players to track skill levels using an Elo-based rating system.
+
+- [Download on the App Store](https://apps.apple.com/gb/app/courtelo/id6788834734)
+- *Google Play (Internal Testing)*
+
+---
+
+### Kompii
 
 **Kompii** is a social fitness app that makes working out more fun and competitive.  
 It is available on both platforms:
@@ -19,8 +30,8 @@ Learn more at [rtkolabs.com](https://rtkolabs.com).
 
 # About This Repository
 
-This repository does not contain the full Kompii codebase (the project is private).  
-Instead, it highlights selected code snippets and technical concepts to demonstrate my approach.  
+This repository does not contain full production codebases (the projects are private).  
+Instead, it highlights selected code snippets and technical concepts to demonstrate my software engineering approach.
 
 ---
 
